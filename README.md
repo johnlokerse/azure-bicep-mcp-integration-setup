@@ -39,6 +39,8 @@ Use the provided PowerShell scripts for the fastest setup:
 ./scripts/Update-BicepRepo.ps1
 ```
 
+Running the MCP server (#2) is not required because you reference the build DLL from the Azure Bicep project.
+
 ## Prerequisites
 
 - [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) or later (tested with .NET 10.0)
