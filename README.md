@@ -1,4 +1,4 @@
-# Azure Bicep MCP Server (Experimental) Integrations with other services
+# Azure Bicep MCP Server (Experimental) Integrations with other AI services
 
 This guide explains how to run the Azure Bicep MCP server locally for Claude Desktop and Code, and for LMStudio where you can use it with various models.
 
