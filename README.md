@@ -21,6 +21,7 @@ Checkout the [Bicep MCP Server Documentation](https://github.com/Azure/bicep/blo
 
 - **[Claude Code Setup](docs/claude-code-setup.md)** - Configure the MCP server for Claude Code (CLI)
 - **[Claude Desktop Setup](docs/claude-desktop-setup.md)** - Configure the MCP server for Claude Desktop
+- **[Codex CLI Setup](docs/codex-cli-setup.md)** - Configure the MCP server for Codex CLI
 - **[LMStudio Setup](docs/lmstudio-setup.md)** - Configure the MCP server for LMStudio
 - **GitHub Copilot Setup**: Recommended to use the Azure Bicep extension's built-in MCP support.
 
@@ -43,32 +44,23 @@ Running the MCP server (#2) is not required because you reference the build DLL 
 
 ## Prerequisites
 
-- [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) or later (tested with .NET 10.0)
+- [.NET 10.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0?WT.mc_id=MVP_323261) or later (tested with .NET 10.0)
 - Git (for cloning the repository)
 
-## Option 1: Build from Source (Recommended for Easy Updates)
+## Option 1: Build from Source
 
 This approach clones the Bicep repository and builds the MCP server. Updates are as simple as `git pull` and rebuild.
 
 ### Initial Setup
 
 ```bash
-# Clone the Bicep repository
-git clone https://github.com/Azure/bicep.git
-cd bicep
-
-# Build the MCP server
-dotnet build src/Bicep.McpServer/Bicep.McpServer.csproj -c Release
+# Clone and build the Bicep repository
+./scripts/Setup-BicepMCP.ps1
 ```
 
 ### Running the Server
 
-```bash
-# Run the MCP server (uses stdio transport)
-dotnet run --project src/Bicep.McpServer/Bicep.McpServer.csproj -c Release --no-build
-```
-
-Or run the built DLL directly (path may vary based on .NET version):
+You can run the MCP server directly from the extension path. However it is not required to run it separately since clients will launch it as needed. See how to run it locally:
 
 ```bash
 # Find the DLL
@@ -81,14 +73,11 @@ dotnet ./src/Bicep.McpServer/bin/Release/net10.0/Bicep.McpServer.dll
 ### Updating
 
 ```bash
-# Pull latest changes
-git pull
-
-# Rebuild
-dotnet build src/Bicep.McpServer/Bicep.McpServer.csproj -c Release
+# Pull latest changes and rebuild the project
+./scripts/Update-BicepRepo.ps1
 ```
 
-## Option 2: Extract from VS Code Extension
+## Option 2: Extract from VS Code Extension (Easiest approach)
 
 If you already have the Bicep VS Code extension installed, you can use the MCP server DLL directly from it.
 
@@ -103,6 +92,8 @@ The extension is typically installed at:
 The MCP server is located at: `bicepMcpServer/Bicep.McpServer.dll`
 
 ### Running from Extension
+
+You can run the MCP server directly from the extension path. However it is not required to run it separately since clients will launch it as needed. See how to run it locally:
 
 ```bash
 # Find your extension version
@@ -122,44 +113,6 @@ The following PowerShell scripts are provided to simplify setup and maintenance:
 | [Update-BicepRepo.ps1](scripts/Update-BicepRepo.ps1) | Pulls the latest changes from the Bicep repository and rebuilds the MCP server.                                                                        |
 | [Run-BicepMCP.ps1](scripts/Run-BicepMCP.ps1)         | Starts the Bicep MCP server using stdio transport.                                                                                                     |
 
-## Verifying the Server Works
-
-You can test the server is working by sending a simple MCP initialization message. The server expects JSON-RPC messages over stdio.
-
-### Quick Test
-
-```bash
-# The server will start and wait for MCP protocol messages via stdin
-dotnet /path/to/Bicep.McpServer.dll
-```
-
-If the server starts without errors, it's ready to receive MCP protocol messages from a client.
-
-## Troubleshooting
-
-### "dotnet: command not found"
-
-Ensure the .NET SDK is installed and in your PATH:
-
-```bash
-# Check .NET version
-dotnet --version
-
-# If not found, install from https://dotnet.microsoft.com/download
-```
-
-### Build Errors
-
-Make sure you're using .NET 9.0 or later:
-
-```bash
-dotnet --list-sdks
-```
-
-### Server Doesn't Respond
-
-The MCP server uses stdio transport. It won't produce output until it receives valid MCP protocol messages from a client.
-
 ## How It Works
 
 The Bicep MCP server:
@@ -167,7 +120,7 @@ The Bicep MCP server:
 1. Uses the [Model Context Protocol](https://modelcontextprotocol.io/) for AI agent integrations
 2. Communicates via **stdio** (standard input/output)
 3. Provides tools for Azure resource type information and Bicep best practices
-4. Is built on .NET 9.0 using Microsoft's MCP SDK
+4. Is built on .NET 10.0 using Microsoft's MCP SDK
 
 ## References
 

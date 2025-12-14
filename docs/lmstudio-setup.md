@@ -7,8 +7,8 @@ This guide explains how to configure and use the Azure Bicep MCP server with LMS
 ## Prerequisites
 
 - [Claude Desktop](https://claude.ai/download) installed
-- [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) or later
-- Bicep MCP Server built (run `./scripts/Setup-BicepMCP.ps1` first) or use the VS Code extension method found in [README.md](../README.md#option-2-extract-from-vs-code-extension)
+- [.NET 10.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0?WT.mc_id=MVP_323261) or later
+- Bicep MCP Server built (run `./scripts/Setup-BicepMCP.ps1` first) or use the VS Code extension method found in [README.md](../README.md#option-2-extract-from-vs-code-extension-easiest-approach)
 
 ## Quick Setup
 

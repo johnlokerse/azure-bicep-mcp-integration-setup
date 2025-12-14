@@ -1,12 +1,12 @@
-# Using Bicep MCP Server with Claude Code
+# Using Bicep MCP Server with Codex CLI
 
-This guide explains how to configure and use the Azure Bicep MCP server with Claude Code (CLI).
+This guide explains how to configure and use the Azure Bicep MCP server with Codex CLI.
 
-![Claude Code Calling Bicep MCP Server](../images/ClaudeCodeCallingBicepMCP.png)
+![Codex Calling Bicep MCP Server](../images/CodexCallingBicepMCP.png)
 
 ## Prerequisites
 
-- [Claude Code](https://claude.ai/code) installed and authenticated
+- [Codex CLI](https://developers.openai.com/codex/cli/) installed and authenticated
 - [.NET 10.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0?WT.mc_id=MVP_323261) or later
 - Bicep MCP Server built (run `./scripts/Setup-BicepMCP.ps1` first) or use the VS Code extension method found in [README.md](../README.md#option-2-extract-from-vs-code-extension-easiest-approach)
 
@@ -15,7 +15,7 @@ This guide explains how to configure and use the Azure Bicep MCP server with Cla
 Run this single command to add the Bicep MCP server:
 
 ```bash
-claude mcp add --transport stdio bicep --scope user -- /path/to/Bicep.McpServer.dll
+codex mcp add bicep -- dotnet /path/to/Bicep.McpServer.dll
 ```
 
 > **Note**: Replace the path with your actual path to `Bicep.McpServer.dll`
@@ -38,48 +38,27 @@ If you use the VS Code extension method, the path may look like this:
 ~/.vscode/extensions/ms-azuretools.vscode-bicep-0.39.26/bicepMcpServer/Bicep.McpServer.dll
 ```
 
-
 ### 2. Add the MCP Server
 
-Choose one of these scopes based on your needs:
+Run:
 
-#### User Scope (Recommended for Personal Use)
-
-Available across all your projects:
-
-```bash
-claude mcp add --transport stdio bicep --scope user -- dotnet /path/to/Bicep.McpServer.dll
 ```
-
-#### Local Scope (Default)
-
-Available only in the current project, private to you:
-
-```bash
-claude mcp add --transport stdio bicep -- dotnet /path/to/Bicep.McpServer.dll
-```
-
-#### Project Scope (For Team Sharing)
-
-Creates a `.mcp.json` file that can be committed to source control:
-
-```bash
-claude mcp add --transport stdio bicep --scope project -- dotnet /path/to/Bicep.McpServer.dll
+codex mcp add bicep -- dotnet /path/to/Bicep.McpServer.dll
 ```
 
 ### 3. Verify the Server is Configured
 
 ```bash
 # List all configured MCP servers
-claude mcp list
+codex mcp list
 
 # Get details for the Bicep server
-claude mcp get bicep
+codex mcp get bicep
 ```
 
-### 4. Check Server Status in Claude Code
+### 4. Check Server Status in Codex CLI
 
-Within a Claude Code session, use:
+Within a Codex CLI session, use:
 
 ```
 /mcp
@@ -89,7 +68,7 @@ This displays all connected MCP servers and their status.
 
 ## Available Tools
 
-Once connected, Claude Code has access to these Bicep tools:
+Once connected, Codex CLI has access to these Bicep tools:
 
 | Tool                                  | Description                                                                      |
 | ------------------------------------- | -------------------------------------------------------------------------------- |
@@ -100,7 +79,7 @@ Once connected, Claude Code has access to these Bicep tools:
 
 ## Example Usage
 
-Once the MCP server is connected, you can ask Claude Code things like:
+Once the MCP server is connected, you can ask Codex CLI things like:
 
 ```
 > What are the best practices for writing Bicep code?
