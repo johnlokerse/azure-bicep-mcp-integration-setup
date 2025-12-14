@@ -17,50 +17,31 @@ The Bicep MCP (Model Context Protocol) server provides AI agents with tools to h
 
 Checkout the [Bicep MCP Server Documentation](https://github.com/Azure/bicep/blob/main/docs/experimental/mcp-tools.md) for more information.
 
-## Client Setup Guides
-
-- **[Claude Code Setup](docs/claude-code-setup.md)** - Configure the MCP server for Claude Code (CLI)
-- **[Claude Desktop Setup](docs/claude-desktop-setup.md)** - Configure the MCP server for Claude Desktop
-- **[Codex CLI Setup](docs/codex-cli-setup.md)** - Configure the MCP server for Codex CLI
-- **[LMStudio Setup](docs/lmstudio-setup.md)** - Configure the MCP server for LMStudio
-- **GitHub Copilot Setup**: Recommended to use the Azure Bicep extension's built-in MCP support.
-
-## Quick Start (Recommended)
-
-Use the provided PowerShell scripts for the fastest setup:
-
-```powershell
-# 1. Run the setup script (clones repo and builds)
-./scripts/Setup-BicepMCP.ps1
-
-# 2. Run the MCP server
-./scripts/Run-BicepMCP.ps1
-
-# 3. To update later
-./scripts/Update-BicepRepo.ps1
-```
-
-Running the MCP server (#2) is not required because you reference the build DLL from the Azure Bicep project.
-
 ## Prerequisites
 
 - [.NET 10.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0?WT.mc_id=MVP_323261) or later (tested with .NET 10.0)
 - Git (for cloning the repository)
 
-## Option 1: Build from Source
+### Options
+
+There are two options to get the Bicep MCP server DLL:
+* Option 1: Build from source (more control, easier to update)
+* Option 2: Extract from VS Code extension (easiest approach)
+
+### Option 1: Build from Source
 
 This approach clones the Bicep repository and builds the MCP server. Updates are as simple as `git pull` and rebuild.
 
-### Initial Setup
+#### Initial Setup
 
 ```bash
 # Clone and build the Bicep repository
 ./scripts/Setup-BicepMCP.ps1
 ```
 
-### Running the Server
+#### Running the Server
 
-You can run the MCP server directly from the extension path. However it is not required to run it separately since clients will launch it as needed. See how to run it locally:
+You can run the MCP server directly from the extension path. However it is not required to run it separately since clients will launch it as needed. To run it in a specific client see: [Client Setup Guides](#client-setup-guides). To run it locally see:
 
 ```bash
 # Find the DLL
@@ -70,18 +51,18 @@ find src/Bicep.McpServer/bin/Release -name "Bicep.McpServer.dll"
 dotnet ./src/Bicep.McpServer/bin/Release/net10.0/Bicep.McpServer.dll
 ```
 
-### Updating
+#### Updating
 
 ```bash
 # Pull latest changes and rebuild the project
 ./scripts/Update-BicepRepo.ps1
 ```
 
-## Option 2: Extract from VS Code Extension (Easiest approach)
+### Option 2: Extract from VS Code Extension (easiest approach)
 
 If you already have the Bicep VS Code extension installed, you can use the MCP server DLL directly from it.
 
-### Locate the Extension
+#### Locate the Extension
 
 The extension is typically installed at:
 
@@ -91,9 +72,9 @@ The extension is typically installed at:
 
 The MCP server is located at: `bicepMcpServer/Bicep.McpServer.dll`
 
-### Running from Extension
+#### Running from Extension
 
-You can run the MCP server directly from the extension path. However it is not required to run it separately since clients will launch it as needed. See how to run it locally:
+You can run the MCP server directly from the extension path. However it is not required to run it separately since clients will launch it as needed. To run it in a specific client see: [Client Setup Guides](#client-setup-guides). To run it locally see:
 
 ```bash
 # Find your extension version
@@ -112,6 +93,14 @@ The following PowerShell scripts are provided to simplify setup and maintenance:
 | [Setup-BicepMCP.ps1](scripts/Setup-BicepMCP.ps1)     | Clones the Bicep repository (if not already present) and builds the MCP server. Outputs configuration instructions for Claude Desktop and Claude Code. |
 | [Update-BicepRepo.ps1](scripts/Update-BicepRepo.ps1) | Pulls the latest changes from the Bicep repository and rebuilds the MCP server.                                                                        |
 | [Run-BicepMCP.ps1](scripts/Run-BicepMCP.ps1)         | Starts the Bicep MCP server using stdio transport.                                                                                                     |
+
+## Client Setup Guides
+
+- **[Claude Code Setup](docs/claude-code-setup.md)** - Configure the MCP server for Claude Code (CLI)
+- **[Claude Desktop Setup](docs/claude-desktop-setup.md)** - Configure the MCP server for Claude Desktop
+- **[Codex CLI Setup](docs/codex-cli-setup.md)** - Configure the MCP server for Codex CLI
+- **[LMStudio Setup](docs/lmstudio-setup.md)** - Configure the MCP server for LMStudio
+- **GitHub Copilot Setup**: Recommended to use the Azure Bicep extension's built-in MCP support.
 
 ## How It Works
 
