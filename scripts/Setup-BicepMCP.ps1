@@ -18,7 +18,7 @@ try {
 }
 catch {
     Write-Host "ERROR: .NET SDK is not installed." -ForegroundColor Red
-    Write-Host "Please install .NET 9.0 SDK from: https://dotnet.microsoft.com/download/dotnet/9.0"
+    Write-Host "Please install .NET 10.0 SDK from: https://dotnet.microsoft.com/download/dotnet/10.0"
     exit 1
 }
 
@@ -85,4 +85,7 @@ For Claude Desktop, add to claude_desktop_config.json:
 
 For Claude Code, run:
   claude mcp add --transport stdio bicep --scope user -- dotnet "$McpServerPath"
+
+For Codex CLI, run:
+  codex mcp add bicep -- dotnet "$McpServerPath"
 "@

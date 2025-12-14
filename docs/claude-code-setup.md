@@ -15,7 +15,7 @@ This guide explains how to configure and use the Azure Bicep MCP server with Cla
 Run this single command to add the Bicep MCP server:
 
 ```bash
-claude mcp add --transport stdio bicep --scope user -- /path/to/Bicep.McpServer.dll
+claude mcp add --transport stdio bicep --scope user -- dotnet /path/to/Bicep.McpServer.dll
 ```
 
 > **Note**: Replace the path with your actual path to `Bicep.McpServer.dll`

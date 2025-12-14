@@ -94,6 +94,10 @@ The following PowerShell scripts are provided to simplify setup and maintenance:
 | [Update-BicepRepo.ps1](scripts/Update-BicepRepo.ps1) | Pulls the latest changes from the Bicep repository and rebuilds the MCP server.                                                                        |
 | [Run-BicepMCP.ps1](scripts/Run-BicepMCP.ps1)         | Starts the Bicep MCP server using stdio transport.                                                                                                     |
 
+## Troubleshooting
+
+- On Windows make sure to escape backslashes in paths (e.g., `C:\\path\\to\\Bicep.McpServer.dll`)
+
 ## Client Setup Guides
 
 - **[Claude Code Setup](docs/claude-code-setup.md)** - Configure the MCP server for Claude Code (CLI)
@@ -116,3 +120,9 @@ The Bicep MCP server:
 - [Azure Bicep Repository](https://github.com/Azure/bicep)
 - [Bicep MCP Server Documentation](https://github.com/Azure/bicep/blob/main/docs/experimental/mcp-tools.md)
 - [Model Context Protocol](https://modelcontextprotocol.io/)
+
+## Learn More
+
+Read my blog posts on Azure Bicep MCP integration use-cases:
+- [From Prompt to Bicep: GitHub Copilot for Azure in Action](https://johnlokerse.dev/2025/06/30/from-prompt-to-bicep-github-copilot-for-azure-in-action/)
+- [Custom Azure Bicep chat modes for GitHub Copilot](https://johnlokerse.dev/2025/09/08/custom-azure-bicep-chat-modes-for-github-copilot/)
