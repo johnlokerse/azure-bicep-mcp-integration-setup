@@ -37,7 +37,7 @@ if ($OldCommit -eq $NewCommit) {
     Write-Host ""
     Write-Host "Rebuilding MCP Server..."
     dotnet build $McpServerProject -c Release
-    
+
     Write-Host ""
     Write-Host "=== Update Complete ===" -ForegroundColor Cyan
 }
@@ -45,7 +45,7 @@ if ($OldCommit -eq $NewCommit) {
 Pop-Location
 
 # Find the built DLL
-$McpServerDll = Get-ChildItem -Path (Join-Path $BicepDir "src/Bicep.McpServer/bin/Release") -Filter "Bicep.McpServer.dll" -Recurse | Select-Object -First 1
+$McpServerDll = Get-ChildItem -Path (Join-Path $BicepDir "src/Bicep.McpServer/bin/Release") -Filter "Azure.Bicep.McpServer.dll" -Recurse | Select-Object -First 1
 
 if ($McpServerDll) {
     Write-Host ""
