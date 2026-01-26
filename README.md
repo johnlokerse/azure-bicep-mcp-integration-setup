@@ -42,7 +42,7 @@ With .NET 10 you can use `dnx` to run the Bicep MCP server directly from the NuG
 
 Using the command `dnx Azure.Bicep.McpServer --yes` will run the latest version of the Bicep MCP server. To run it in a specific client see: [Client Setup Guides](#client-setup-guides).
 
-### Option 1: Build from Source
+### Option 2: Build from Source
 
 This approach clones the Bicep repository and builds the MCP server. Updates are as simple as `git pull` and rebuild.
 
