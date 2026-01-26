@@ -25,8 +25,16 @@ Checkout the [Bicep MCP Server Documentation](https://github.com/Azure/bicep/blo
 ### Options
 
 There are two options to get the Bicep MCP server DLL:
-* Option 1: Build from source (more control, easier to update)
-* Option 2: Extract from VS Code extension (easiest approach)
+
+* Option 1: Use dnx to run the Azure Bicep MCP NuGet package (recommended approach)
+* Option 2: Build from source (more control, easier to update)
+* Option 3: Extract from VS Code extension
+
+### Option 1: Use dnx to run the Azure Bicep MCP NuGet package (recommended approach)
+
+With .NET 10 you can use `dnx` to run the Bicep MCP server directly from the NuGet package without needing to build it yourself.
+
+Using the command `dnx Azure.Bicep.McpServer --yes` will run the latest version of the Bicep MCP server. To run it in a specific client see: [Client Setup Guides](#client-setup-guides).
 
 ### Option 1: Build from Source
 
@@ -58,7 +66,7 @@ dotnet ./src/Bicep.McpServer/bin/Release/net10.0/Bicep.McpServer.dll
 ./scripts/Update-BicepRepo.ps1
 ```
 
-### Option 2: Extract from VS Code Extension (easiest approach)
+### Option 3: Extract from VS Code Extension
 
 If you already have the Bicep VS Code extension installed, you can use the MCP server DLL directly from it.
 
