@@ -10,9 +10,15 @@ See the Claude Code example:
 
 The Bicep MCP (Model Context Protocol) server provides AI agents with tools to help generate high-quality Bicep code. It exposes the following tools:
 
-- `list_az_resource_types_for_provider` - Lists all available Azure resource types for a specific provider
+- `list_az_resource_types_for_provider` - Lists all Azure resource types for a specific provider (e.g., Microsoft.Storage)
 - `get_az_resource_type_schema` - Gets the schema for a specific Azure resource type and API version
-- `get_bicep_best_practices` - Returns Bicep best practices and guidelines
+- `get_bicep_best_practices` - Returns Bicep coding best practices and guidelines
+- `decompile_arm_parameters_file` - Converts ARM template parameter JSON files into Bicep parameters format (.bicepparam).
+- `decompile_arm_template_file` - Converts ARM template JSON files into Bicep syntax (.bicep).
+- `format_bicep_file` - Applies consistent formatting (indentation, spacing, line breaks) to Bicep files.
+- `get_bicep_file_diagnostics` - Analyzes a Bicep file and returns all compilation diagnostics.
+- `get_file_references` - Analyzes a Bicep file and returns a list of all referenced files including modules, parameter files, and other dependencies.
+- `get_deployment_snapshot` - Creates a snapshot from a .bicepparam file to preview resources and compare Bicep implementations.
 - `list_avm_metadata` - Lists metadata for all Azure Verified Modules (AVM)
 
 Checkout the [Bicep MCP Server Documentation](https://github.com/Azure/bicep/blob/main/docs/experimental/mcp-tools.md) for more information.
@@ -26,9 +32,9 @@ Checkout the [Bicep MCP Server Documentation](https://github.com/Azure/bicep/blo
 
 There are two options to get the Bicep MCP server DLL:
 
-* Option 1: Use dnx to run the Azure Bicep MCP NuGet package (recommended approach)
-* Option 2: Build from source (more control, easier to update)
-* Option 3: Extract from VS Code extension
+- Option 1: Use dnx to run the Azure Bicep MCP NuGet package (recommended approach)
+- Option 2: Build from source (more control, easier to update)
+- Option 3: Extract from VS Code extension
 
 ### Option 1: Use dnx to run the Azure Bicep MCP NuGet package (recommended approach)
 
@@ -132,5 +138,6 @@ The Bicep MCP server:
 ## Learn More
 
 Read my blog posts on Azure Bicep MCP integration use-cases:
+
 - [From Prompt to Bicep: GitHub Copilot for Azure in Action](https://johnlokerse.dev/2025/06/30/from-prompt-to-bicep-github-copilot-for-azure-in-action/)
 - [Custom Azure Bicep chat modes for GitHub Copilot](https://johnlokerse.dev/2025/09/08/custom-azure-bicep-chat-modes-for-github-copilot/)
