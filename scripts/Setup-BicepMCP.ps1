@@ -13,37 +13,37 @@ Write-Host ""
 
 # Check for .NET SDK
 try {
-    $dotnetVersion = dotnet --version
-    Write-Host "✓ .NET SDK found: $dotnetVersion" -ForegroundColor Green
+  $dotnetVersion = dotnet --version
+  Write-Host "✓ .NET SDK found: $dotnetVersion" -ForegroundColor Green
 }
 catch {
-    Write-Host "ERROR: .NET SDK is not installed." -ForegroundColor Red
-    Write-Host "Please install .NET 10.0 SDK from: https://dotnet.microsoft.com/download/dotnet/10.0"
-    exit 1
+  Write-Host "ERROR: .NET SDK is not installed." -ForegroundColor Red
+  Write-Host "Please install .NET 10.0 SDK from: https://dotnet.microsoft.com/download/dotnet/10.0"
+  exit 1
 }
 
 # Check for git
 try {
-    git --version | Out-Null
-    Write-Host "✓ Git found" -ForegroundColor Green
+  git --version | Out-Null
+  Write-Host "✓ Git found" -ForegroundColor Green
 }
 catch {
-    Write-Host "ERROR: Git is not installed." -ForegroundColor Red
-    exit 1
+  Write-Host "ERROR: Git is not installed." -ForegroundColor Red
+  exit 1
 }
 
 # Clone or update repository
 if (Test-Path $BicepDir) {
-    Write-Host ""
-    Write-Host "Bicep repository already exists. Updating..."
-    Push-Location $BicepDir
-    git pull
-    Pop-Location
+  Write-Host ""
+  Write-Host "Bicep repository already exists. Updating..."
+  Push-Location $BicepDir
+  git pull
+  Pop-Location
 }
 else {
-    Write-Host ""
-    Write-Host "Cloning Bicep repository..."
-    git clone https://github.com/Azure/bicep.git $BicepDir
+  Write-Host ""
+  Write-Host "Cloning Bicep repository..."
+  git clone https://github.com/Azure/bicep.git $BicepDir
 }
 
 Write-Host ""
@@ -53,11 +53,11 @@ dotnet build $McpServerProject -c Release
 Pop-Location
 
 # Find the built DLL
-$McpServerDll = Get-ChildItem -Path (Join-Path $BicepDir "src/Bicep.McpServer/bin/Release") -Filter "Bicep.McpServer.dll" -Recurse | Select-Object -First 1
+$McpServerDll = Get-ChildItem -Path (Join-Path $BicepDir "src/Bicep.McpServer/bin/Release") -Filter "Azure.Bicep.McpServer.dll" -Recurse | Select-Object -First 1
 
 if (-not $McpServerDll) {
-    Write-Host "ERROR: Could not find Bicep.McpServer.dll" -ForegroundColor Red
-    exit 1
+  Write-Host "ERROR: Could not find Azure.Bicep.McpServer.dll" -ForegroundColor Red
+  exit 1
 }
 
 $McpServerPath = $McpServerDll.FullName

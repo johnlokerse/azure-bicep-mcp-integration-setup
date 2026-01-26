@@ -49,19 +49,19 @@ Edit the configuration file and add one of the following snippets:
     "bicep": {
       "command": "dotnet",
       "args": [
-        "Path to your Bicep.McpServer.dll"
+        "Path to your Azure.Bicep.McpServer.dll"
       ]
     }
   }
 }
 ```
 
-> **Important**: Replace the path with your actual path to `Bicep.McpServer.dll`
+> **Important**: Replace the path with your actual path to `Azure.Bicep.McpServer.dll`
 
 If you use the VS Code extension method, the path may look like this:
 
 ```bash
-~/.vscode/extensions/ms-azuretools.vscode-bicep-0.39.26/bicepMcpServer/Bicep.McpServer.dll
+~/.vscode/extensions/ms-azuretools.vscode-bicep-0.39.26/bicepMcpServer/Azure.Bicep.McpServer.dll
 ```
 
 ### 3. Restart Claude Desktop
@@ -79,7 +79,7 @@ Only use this step if you are using Option 2 or 3 from the [README.md](../README
 cd <Path to your cloned azure-bicep-mcp-local repository>
 
 # Find the built DLL
-find bicep/src/Bicep.McpServer/bin/Release -name "Bicep.McpServer.dll"
+find bicep/src/Bicep.McpServer/bin/Release -name "Azure.Bicep.McpServer.dll"
 ```
 
 ### 2. Open the Configuration File
@@ -135,7 +135,7 @@ If the file is empty or doesn't exist, create it with one of the following optio
     "bicep": {
       "command": "dotnet",
       "args": [
-        "/Users/<user>/Documents/Repositories/azure-bicep-mcp-local-experiment/bicep/src/Bicep.McpServer/bin/Release/net10.0/Bicep.McpServer.dll"
+        "/Users/<user>/Documents/Repositories/azure-bicep-mcp-local-experiment/bicep/src/Bicep.McpServer/bin/Release/net10.0/Azure.Bicep.McpServer.dll"
       ]
     }
   }
@@ -176,7 +176,7 @@ If the file already exists with other MCP servers, add the Bicep server to the e
     "bicep": {
       "command": "dotnet",
       "args": [
-        "/Users/<user>/Documents/Repositories/azure-bicep-mcp-local-experiment/bicep/src/Bicep.McpServer/bin/Release/net10.0/Bicep.McpServer.dll"
+        "/Users/<user>/Documents/Repositories/azure-bicep-mcp-integration-setup/bicep/src/Bicep.McpServer/bin/Release/net10.0/Azure.Bicep.McpServer.dll"
       ]
     }
   }

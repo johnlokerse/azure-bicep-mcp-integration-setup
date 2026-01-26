@@ -53,10 +53,10 @@ You can run the MCP server directly from the extension path. However it is not r
 
 ```bash
 # Find the DLL
-find src/Bicep.McpServer/bin/Release -name "Bicep.McpServer.dll"
+find bicep/src/Bicep.McpServer/bin/Release -name "Azure.Bicep.McpServer.dll"
 
 # Run it
-dotnet ./src/Bicep.McpServer/bin/Release/net10.0/Bicep.McpServer.dll
+dotnet ./bicep/src/Bicep.McpServer/bin/Release/net10.0/Azure.Bicep.McpServer.dll
 ```
 
 #### Updating
@@ -78,7 +78,7 @@ The extension is typically installed at:
 - **Linux**: `~/.vscode/extensions/ms-azuretools.vscode-bicep-<version>/`
 - **Windows**: `%USERPROFILE%\.vscode\extensions\ms-azuretools.vscode-bicep-<version>\`
 
-The MCP server is located at: `bicepMcpServer/Bicep.McpServer.dll`
+The MCP server is located at: `bicepMcpServer/Azure.Bicep.McpServer.dll`
 
 #### Running from Extension
 
@@ -89,7 +89,7 @@ You can run the MCP server directly from the extension path. However it is not r
 ls ~/.vscode/extensions/ | grep vscode-bicep
 
 # Run the MCP server (replace <version> with your actual version)
-dotnet ~/.vscode/extensions/ms-azuretools.vscode-bicep-<version>/bicepMcpServer/Bicep.McpServer.dll
+dotnet ~/.vscode/extensions/ms-azuretools.vscode-bicep-<version>/bicepMcpServer/Azure.Bicep.McpServer.dll
 ```
 
 ## Helper Scripts
@@ -104,7 +104,7 @@ The following PowerShell scripts are provided to simplify setup and maintenance:
 
 ## Troubleshooting
 
-- On Windows make sure to escape backslashes in paths (e.g., `C:\\path\\to\\Bicep.McpServer.dll`)
+- On Windows make sure to escape backslashes in paths (e.g., `C:\\path\\to\\Azure.Bicep.McpServer.dll`)
 
 ## Client Setup Guides
 

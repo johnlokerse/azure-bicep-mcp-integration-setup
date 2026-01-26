@@ -40,7 +40,7 @@ Open LMStudio and navigate to the MCP configuration file. Choose one of the foll
     "bicep": {
       "command": "dotnet",
       "args": [
-        "Path to your Bicep.McpServer.dll"
+        "Path to your Azure.Bicep.McpServer.dll"
       ]
     }
   }

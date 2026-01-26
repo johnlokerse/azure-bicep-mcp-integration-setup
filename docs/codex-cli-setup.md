@@ -23,10 +23,10 @@ codex mcp add bicep-nuget -- dnx Azure.Bicep.McpServer --yes
 ### Quick Option 2: Use a local DLL
 
 ```bash
-codex mcp add bicep -- dotnet /path/to/Bicep.McpServer.dll
+codex mcp add bicep -- dotnet /path/to/Azure.Bicep.McpServer.dll
 ```
 
-> **Note**: Replace the path with your actual path to `Bicep.McpServer.dll`
+> **Note**: Replace the path with your actual path to `Azure.Bicep.McpServer.dll`
 
 ## Step-by-Step Setup
 
@@ -39,13 +39,13 @@ Only use this step if you are using Option 2 or 3 from the [README.md](../README
 cd <Path to your cloned azure-bicep-mcp-local repository>
 
 # Find the built DLL
-find bicep/src/Bicep.McpServer/bin/Release -name "Bicep.McpServer.dll"
+find bicep/src/Bicep.McpServer/bin/Release -name "Azure.Bicep.McpServer.dll"
 ```
 
 If you use the VS Code extension method, the path may look like this:
 
 ```bash
-~/.vscode/extensions/ms-azuretools.vscode-bicep-0.39.26/bicepMcpServer/Bicep.McpServer.dll
+~/.vscode/extensions/ms-azuretools.vscode-bicep-0.39.26/bicepMcpServer/Azure.Bicep.McpServer.dll
 ```
 
 ### 2. Add the MCP Server
@@ -61,7 +61,7 @@ codex mcp add bicep -- dnx Azure.Bicep.McpServer --yes
 #### Step Option 2 & 3: Use a local DLL
 
 ```bash
-codex mcp add bicep -- dotnet /path/to/Bicep.McpServer.dll
+codex mcp add bicep -- dotnet /path/to/Azure.Bicep.McpServer.dll
 ```
 
 ### 3. Verify the Server is Configured
