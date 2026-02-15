@@ -26,10 +26,12 @@ This will open a prompt to add a new MCP server. Fill in the details as follows:
 
 ![GitHub Copilot CLI Add New MCP Server](../images/GitHubCopilotCLINewMCPServer.png)
 
-**Name**: Azure_Bicep_MCP_Server
-**Server Type**: STDIO
-**Command**: `dnx Azure.Bicep.McpServer --yes`
-**Tools**: `*` (or specify individual tools if you want to limit access)
+| Field       | Value                                                         |
+| ----------- | ------------------------------------------------------------- |
+| Name        | Azure_Bicep_MCP_Server                                        |
+| Server Type | STDIO                                                         |
+| Command     | `dnx Azure.Bicep.McpServer --yes`                             |
+| Tools       | `*` (or specify individual tools if you want to limit access) |
 
 ### Option 2 & 3: Use a local DLL
 
@@ -41,10 +43,12 @@ First, you need to open GitHub Copilot CLI by running command `copilot` in your 
 
 This will open a prompt to add a new MCP server. Fill in the details as follows:
 
-**Name**: Azure_Bicep_MCP_Server
-**Server Type**: STDIO
-**Command**: `dotnet /path/to/Azure.Bicep.McpServer.dll`
-**Tools**: `*` (or specify individual tools if you want to limit access)
+| Field       | Value                                                         |
+| ----------- | ------------------------------------------------------------- |
+| Name        | Azure_Bicep_MCP_Server                                        |
+| Server Type | STDIO                                                         |
+| Command     | `dotnet /path/to/Azure.Bicep.McpServer.dll`                   |
+| Tools       | `*` (or specify individual tools if you want to limit access) |
 
 > **Note**: Replace the path with your actual path to `Azure.Bicep.McpServer.dll`
 
