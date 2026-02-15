@@ -117,8 +117,9 @@ The following PowerShell scripts are provided to simplify setup and maintenance:
 - **[Claude Code Setup](docs/claude-code-setup.md)** - Configure the MCP server for Claude Code (CLI)
 - **[Claude Desktop Setup](docs/claude-desktop-setup.md)** - Configure the MCP server for Claude Desktop
 - **[Codex CLI Setup](docs/codex-cli-setup.md)** - Configure the MCP server for Codex CLI
+- **[GitHub Copilot CLI Setup](docs/github-copilot-cli-setup.md)** - Configure the MCP server for Codex CLI
 - **[LMStudio Setup](docs/lmstudio-setup.md)** - Configure the MCP server for LMStudio
-- **GitHub Copilot Setup**: Recommended to use the Azure Bicep extension's built-in MCP support.
+- **GitHub Copilot (VSCode) Setup**: Recommended to use the Azure Bicep extension's built-in MCP support.
 
 ## How It Works
 
@@ -141,3 +142,4 @@ Read my blog posts on Azure Bicep MCP integration use-cases:
 
 - [From Prompt to Bicep: GitHub Copilot for Azure in Action](https://johnlokerse.dev/2025/06/30/from-prompt-to-bicep-github-copilot-for-azure-in-action/)
 - [Custom Azure Bicep chat modes for GitHub Copilot](https://johnlokerse.dev/2025/09/08/custom-azure-bicep-chat-modes-for-github-copilot/)
+- [Agent Skills for Azure Bicep with GitHub Copilot: From Manual Work to Automated Workflows](https://johnlokerse.dev/2026/02/02/agent-skills-for-azure-bicep-with-github-copilot-from-manual-work-to-automated-workflows/)
