@@ -1,4 +1,4 @@
-# Azure Bicep MCP Server (Experimental) Integrations with other AI services
+# Azure Bicep MCP Server Integrations with other AI services
 
 This guide explains how to run the Azure Bicep MCP server locally for Claude Desktop and Code, OpenAI Codex CLI and for LMStudio where you can use it with various models.
 
@@ -21,7 +21,7 @@ The Bicep MCP (Model Context Protocol) server provides AI agents with tools to h
 - `get_deployment_snapshot` - Creates a snapshot from a .bicepparam file to preview resources and compare Bicep implementations.
 - `list_avm_metadata` - Lists metadata for all Azure Verified Modules (AVM)
 
-Checkout the [Bicep MCP Server Documentation](https://github.com/Azure/bicep/blob/main/docs/experimental/mcp-tools.md) for more information.
+Checkout the [Bicep MCP Server Documentation](https://github.com/Azure/bicep/blob/main/docs/mcp-tools.md) for more information.
 
 ## Prerequisites
 
@@ -133,7 +133,7 @@ The Bicep MCP server:
 ## References
 
 - [Azure Bicep Repository](https://github.com/Azure/bicep)
-- [Bicep MCP Server Documentation](https://github.com/Azure/bicep/blob/main/docs/experimental/mcp-tools.md)
+- [Bicep MCP Server Documentation](https://github.com/Azure/bicep/blob/main/docs/mcp-tools.md)
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 
 ## Learn More
