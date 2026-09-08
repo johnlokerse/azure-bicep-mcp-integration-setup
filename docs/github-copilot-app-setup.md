@@ -26,7 +26,6 @@ Open the GitHub Copilot App and navigate to **Customize** > **MCP** and click **
 | Server Type | Local                                                         |
 | Command     | `dnx`
 | Arguments   | `Azure.Bicep.McpServer --yes`                                 |
-| Tools       | `*` (or specify individual tools if you want to limit access) |
 
 ## Available Tools
 
